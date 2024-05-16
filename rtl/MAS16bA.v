@@ -21,6 +21,7 @@ wire [15:0] instrAddr;
 wire [1:0] ra, rb, rd, type, op;
 wire selB;
 wire jsel;
+wire msel;
 wire mwen;
 wire rfen;
 wire cbz_flag;
@@ -40,6 +41,7 @@ ID16bA id(
 	.selOp(op),
 	.selB(selB),
 	.jsel(jsel),
+	.msel(msel),
 	.memwen(mwen),
 	.rfen(rfen),
 	.dvdd(dvdd),
@@ -87,6 +89,10 @@ MEM12b4bA mem(
 	.dvdd(dvdd),
 	.dgnd(dgnd)
 );
+
+// Write-Back
+assign wbdata = msel ? mem_out : alu_res;
+
 
 // Program Count
 always @(posedge clk) begin

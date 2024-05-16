@@ -9,6 +9,7 @@ module ID16bA (
 	output [1:0] selOp, // muxsel for operation of a given type (ex: arithm -> adc, add, mul, sra)
 	output selB, // muxsel for second operand (Register B or Constant C)
 	output jsel, // jump select
+	output msel, // mem op select (high if instruction is a LD)
 	output memwen, // memory write enable (high if instruction is a store)
 	output rfen, // register file write enable (high if instruction writes to a register)
 	inout dvdd, // module digital supply
@@ -34,5 +35,6 @@ assign selOp = opcode[1:0];
 assign memwen = opcode == 4'h9; // instr is ST
 assign rfen = (opcode != 4'h9 & opcode != 4'he & opcode != 4'hf); // instr is not ST neither CBZ nor JMP
 assign jsel = opcode == 4'hf; // instr is JMP
+assign msel = opcode == 4'h8; // instr is LD
 
 endmodule

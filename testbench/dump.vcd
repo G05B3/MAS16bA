@@ -1,5 +1,5 @@
 $date
-	Thu May 16 23:41:15 2024
+	Thu May 16 23:55:18 2024
 $end
 $version
 	Icarus Verilog
@@ -36,38 +36,39 @@ $var wire 16 3 opb [15:0] $end
 $var wire 16 4 opa [15:0] $end
 $var wire 2 5 op [1:0] $end
 $var wire 1 6 mwen $end
-$var wire 16 7 mem_out [15:0] $end
-$var wire 1 8 jsel $end
-$var wire 16 9 instr [15:0] $end
-$var wire 1 : cbz_flag $end
-$var wire 8 ; c [7:0] $end
-$var wire 16 < alu_res [15:0] $end
-$var reg 16 = pc [15:0] $end
+$var wire 1 7 msel $end
+$var wire 16 8 mem_out [15:0] $end
+$var wire 1 9 jsel $end
+$var wire 16 : instr [15:0] $end
+$var wire 1 ; cbz_flag $end
+$var wire 8 < c [7:0] $end
+$var wire 16 = alu_res [15:0] $end
+$var reg 16 > pc [15:0] $end
 $scope module alu $end
 $var wire 1 ! dgnd $end
 $var wire 1 " dvdd $end
-$var wire 16 > opB [15:0] $end
-$var wire 16 ? rand [15:0] $end
-$var wire 16 @ rnot [15:0] $end
-$var wire 16 A ror [15:0] $end
-$var wire 16 B rset [15:0] $end
-$var wire 16 C rxor [15:0] $end
-$var wire 2 D selType [1:0] $end
-$var wire 2 E selOp [1:0] $end
-$var wire 16 F rsra [15:0] $end
-$var wire 16 G rmul [15:0] $end
-$var wire 16 H rmem [15:0] $end
-$var wire 16 I rlt [15:0] $end
-$var wire 16 J rlog [15:0] $end
-$var wire 16 K res [15:0] $end
-$var wire 16 L rcnd [15:0] $end
-$var wire 16 M rbj [15:0] $end
-$var wire 16 N ratm [15:0] $end
-$var wire 16 O radr [15:0] $end
-$var wire 16 P radd [15:0] $end
-$var wire 16 Q opD [15:0] $end
-$var wire 16 R opA [15:0] $end
-$var wire 1 : cbz $end
+$var wire 16 ? opB [15:0] $end
+$var wire 16 @ rand [15:0] $end
+$var wire 16 A rnot [15:0] $end
+$var wire 16 B ror [15:0] $end
+$var wire 16 C rset [15:0] $end
+$var wire 16 D rxor [15:0] $end
+$var wire 2 E selType [1:0] $end
+$var wire 2 F selOp [1:0] $end
+$var wire 16 G rsra [15:0] $end
+$var wire 16 H rmul [15:0] $end
+$var wire 16 I rmem [15:0] $end
+$var wire 16 J rlt [15:0] $end
+$var wire 16 K rlog [15:0] $end
+$var wire 16 L res [15:0] $end
+$var wire 16 M rcnd [15:0] $end
+$var wire 16 N rbj [15:0] $end
+$var wire 16 O ratm [15:0] $end
+$var wire 16 P radr [15:0] $end
+$var wire 16 Q radd [15:0] $end
+$var wire 16 R opD [15:0] $end
+$var wire 16 S opA [15:0] $end
+$var wire 1 ; cbz $end
 $upscope $end
 $scope module id $end
 $var wire 1 # clk $end
@@ -75,48 +76,49 @@ $var wire 1 ! dgnd $end
 $var wire 1 " dvdd $end
 $var wire 1 , rfen $end
 $var wire 1 + selB $end
-$var wire 2 S selType [1:0] $end
-$var wire 2 T selOp [1:0] $end
-$var wire 2 U rd [1:0] $end
-$var wire 2 V rb [1:0] $end
-$var wire 2 W ra [1:0] $end
-$var wire 4 X opcode [3:0] $end
+$var wire 2 T selType [1:0] $end
+$var wire 2 U selOp [1:0] $end
+$var wire 2 V rd [1:0] $end
+$var wire 2 W rb [1:0] $end
+$var wire 2 X ra [1:0] $end
+$var wire 4 Y opcode [3:0] $end
+$var wire 1 7 msel $end
 $var wire 1 6 memwen $end
-$var wire 1 8 jsel $end
-$var wire 16 Y instr [15:0] $end
-$var wire 8 Z c [7:0] $end
+$var wire 1 9 jsel $end
+$var wire 16 Z instr [15:0] $end
+$var wire 8 [ c [7:0] $end
 $upscope $end
 $scope module mem $end
-$var wire 16 [ addressA [15:0] $end
-$var wire 16 \ addressB [15:0] $end
-$var wire 16 ] dataInA [15:0] $end
+$var wire 16 \ addressA [15:0] $end
+$var wire 16 ] addressB [15:0] $end
+$var wire 16 ^ dataInA [15:0] $end
 $var wire 1 ! dgnd $end
 $var wire 1 " dvdd $end
 $var wire 1 % writeEnableA $end
 $var wire 1 6 writeEnableB $end
-$var wire 16 ^ nextAddrB [15:0] $end
-$var wire 16 _ nextAddrA [15:0] $end
-$var wire 16 ` dataOutB [15:0] $end
-$var wire 16 a dataOutA [15:0] $end
-$var wire 16 b dataInB [15:0] $end
+$var wire 16 _ nextAddrB [15:0] $end
+$var wire 16 ` nextAddrA [15:0] $end
+$var wire 16 a dataOutB [15:0] $end
+$var wire 16 b dataOutA [15:0] $end
+$var wire 16 c dataInB [15:0] $end
 $upscope $end
 $scope module rf $end
 $var wire 1 # clk $end
-$var wire 16 c data [15:0] $end
+$var wire 16 d data [15:0] $end
 $var wire 1 ! dgnd $end
 $var wire 1 " dvdd $end
 $var wire 1 , en $end
-$var wire 2 d ra [1:0] $end
-$var wire 2 e rb [1:0] $end
-$var wire 2 f rd [1:0] $end
+$var wire 2 e ra [1:0] $end
+$var wire 2 f rb [1:0] $end
+$var wire 2 g rd [1:0] $end
 $var wire 1 & rstz $end
-$var wire 16 g opD [15:0] $end
-$var wire 16 h opB [15:0] $end
-$var wire 16 i opA [15:0] $end
-$var parameter 32 j NREGISTERS $end
-$var parameter 32 k WIDTH $end
+$var wire 16 h opD [15:0] $end
+$var wire 16 i opB [15:0] $end
+$var wire 16 j opA [15:0] $end
+$var parameter 32 k NREGISTERS $end
+$var parameter 32 l WIDTH $end
 $scope begin $ivl_for_loop0 $end
-$var integer 32 l i [31:0] $end
+$var integer 32 m i [31:0] $end
 $upscope $end
 $upscope $end
 $upscope $end
@@ -124,19 +126,20 @@ $upscope $end
 $enddefinitions $end
 $comment Show the parameter values. $end
 $dumpall
-b10000 k
-b100 j
+b10000 l
+b100 k
 $end
 #0
 $dumpvars
-bx l
+bx m
+bx j
 bx i
 bx h
 bx g
 bx f
 bx e
 bx d
-bz c
+bx c
 bx b
 bx a
 bx `
@@ -161,8 +164,8 @@ bx N
 bx M
 bx L
 bx K
-bx J
-b0x I
+b0x J
+bx I
 bx H
 bx G
 bx F
@@ -176,11 +179,11 @@ bx ?
 bx >
 bx =
 bx <
-bx ;
-x:
-bx 9
-x8
-bx 7
+x;
+bx :
+x9
+bx 8
+x7
 x6
 bx 5
 bx 4
@@ -194,7 +197,7 @@ bx -
 x,
 x+
 bx *
-bz )
+bx )
 bx (
 bz '
 x&
