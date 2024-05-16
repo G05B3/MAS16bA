@@ -2,10 +2,17 @@
 
 module MAS16bA_tb;
 
-reg clk;
+reg [15:0] instr;
+reg clk, rstz, pg;
+wire dvdd, dgnd;
 
 MAS16bA uut (
-    .clk(clk)
+	.pg_instr(instr),
+	.pg(pg),
+	.clk(clk),
+	.rstz(rstz),
+	.dvdd(dvdd),
+	.dgnd(dgnd)
 );
 
 initial

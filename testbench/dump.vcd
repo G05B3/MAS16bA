@@ -1,0 +1,206 @@
+$date
+	Thu May 16 23:41:15 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module MAS16bA_tb $end
+$var wire 1 ! dgnd $end
+$var wire 1 " dvdd $end
+$var reg 1 # clk $end
+$var reg 16 $ instr [15:0] $end
+$var reg 1 % pg $end
+$var reg 1 & rstz $end
+$scope module uut $end
+$var wire 1 # clk $end
+$var wire 1 ! dgnd $end
+$var wire 1 " dvdd $end
+$var wire 16 ' instrAddr [15:0] $end
+$var wire 1 % pg $end
+$var wire 16 ( pg_instr [15:0] $end
+$var wire 1 & rstz $end
+$var wire 16 ) wbdata [15:0] $end
+$var wire 2 * type [1:0] $end
+$var wire 1 + selB $end
+$var wire 1 , rfen $end
+$var wire 2 - rd [1:0] $end
+$var wire 2 . rb [1:0] $end
+$var wire 2 / ra [1:0] $end
+$var wire 16 0 opd [15:0] $end
+$var wire 16 1 opc [15:0] $end
+$var wire 16 2 opb_alu [15:0] $end
+$var wire 16 3 opb [15:0] $end
+$var wire 16 4 opa [15:0] $end
+$var wire 2 5 op [1:0] $end
+$var wire 1 6 mwen $end
+$var wire 16 7 mem_out [15:0] $end
+$var wire 1 8 jsel $end
+$var wire 16 9 instr [15:0] $end
+$var wire 1 : cbz_flag $end
+$var wire 8 ; c [7:0] $end
+$var wire 16 < alu_res [15:0] $end
+$var reg 16 = pc [15:0] $end
+$scope module alu $end
+$var wire 1 ! dgnd $end
+$var wire 1 " dvdd $end
+$var wire 16 > opB [15:0] $end
+$var wire 16 ? rand [15:0] $end
+$var wire 16 @ rnot [15:0] $end
+$var wire 16 A ror [15:0] $end
+$var wire 16 B rset [15:0] $end
+$var wire 16 C rxor [15:0] $end
+$var wire 2 D selType [1:0] $end
+$var wire 2 E selOp [1:0] $end
+$var wire 16 F rsra [15:0] $end
+$var wire 16 G rmul [15:0] $end
+$var wire 16 H rmem [15:0] $end
+$var wire 16 I rlt [15:0] $end
+$var wire 16 J rlog [15:0] $end
+$var wire 16 K res [15:0] $end
+$var wire 16 L rcnd [15:0] $end
+$var wire 16 M rbj [15:0] $end
+$var wire 16 N ratm [15:0] $end
+$var wire 16 O radr [15:0] $end
+$var wire 16 P radd [15:0] $end
+$var wire 16 Q opD [15:0] $end
+$var wire 16 R opA [15:0] $end
+$var wire 1 : cbz $end
+$upscope $end
+$scope module id $end
+$var wire 1 # clk $end
+$var wire 1 ! dgnd $end
+$var wire 1 " dvdd $end
+$var wire 1 , rfen $end
+$var wire 1 + selB $end
+$var wire 2 S selType [1:0] $end
+$var wire 2 T selOp [1:0] $end
+$var wire 2 U rd [1:0] $end
+$var wire 2 V rb [1:0] $end
+$var wire 2 W ra [1:0] $end
+$var wire 4 X opcode [3:0] $end
+$var wire 1 6 memwen $end
+$var wire 1 8 jsel $end
+$var wire 16 Y instr [15:0] $end
+$var wire 8 Z c [7:0] $end
+$upscope $end
+$scope module mem $end
+$var wire 16 [ addressA [15:0] $end
+$var wire 16 \ addressB [15:0] $end
+$var wire 16 ] dataInA [15:0] $end
+$var wire 1 ! dgnd $end
+$var wire 1 " dvdd $end
+$var wire 1 % writeEnableA $end
+$var wire 1 6 writeEnableB $end
+$var wire 16 ^ nextAddrB [15:0] $end
+$var wire 16 _ nextAddrA [15:0] $end
+$var wire 16 ` dataOutB [15:0] $end
+$var wire 16 a dataOutA [15:0] $end
+$var wire 16 b dataInB [15:0] $end
+$upscope $end
+$scope module rf $end
+$var wire 1 # clk $end
+$var wire 16 c data [15:0] $end
+$var wire 1 ! dgnd $end
+$var wire 1 " dvdd $end
+$var wire 1 , en $end
+$var wire 2 d ra [1:0] $end
+$var wire 2 e rb [1:0] $end
+$var wire 2 f rd [1:0] $end
+$var wire 1 & rstz $end
+$var wire 16 g opD [15:0] $end
+$var wire 16 h opB [15:0] $end
+$var wire 16 i opA [15:0] $end
+$var parameter 32 j NREGISTERS $end
+$var parameter 32 k WIDTH $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 l i [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b10000 k
+b100 j
+$end
+#0
+$dumpvars
+bx l
+bx i
+bx h
+bx g
+bx f
+bx e
+bx d
+bz c
+bx b
+bx a
+bx `
+bx _
+bx ^
+bx ]
+bx \
+bx [
+bx Z
+bx Y
+bx X
+bx W
+bx V
+bx U
+bx T
+bx S
+bx R
+bx Q
+bx P
+bx O
+bx N
+bx M
+bx L
+bx K
+bx J
+b0x I
+bx H
+bx G
+bx F
+bx E
+bx D
+bx C
+bx B
+bx A
+bx @
+bx ?
+bx >
+bx =
+bx <
+bx ;
+x:
+bx 9
+x8
+bx 7
+x6
+bx 5
+bx 4
+bx 3
+bx 2
+b0xxxxxxxx 1
+bx 0
+bx /
+bx .
+bx -
+x,
+x+
+bx *
+bz )
+bx (
+bz '
+x&
+x%
+bx $
+0#
+z"
+z!
+$end
