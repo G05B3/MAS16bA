@@ -1,4 +1,0 @@
-> instrAddr must be a parameter (base of instruction memory)
-> programming mode, controlled by pg, must reset PC;
-> add Branch Control
-> fix bugs
