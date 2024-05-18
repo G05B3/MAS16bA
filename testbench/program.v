@@ -1,14 +1,14 @@
-`define NUM_INSTRUCTIONS 500
+`define NUM_INSTRUCTIONS 63
 
 task program(); begin
-	#10 instr = 16'hA408;
-	#10 instr = 16'hA802;
-	#10 instr = 16'h1102;
-	#10 instr = 16'h2102;
-	#10 instr = 16'h3102;
-	#10 instr = 16'h4102;
-	#10 instr = 16'h5102;
-	#10 instr = 16'h6100;
-	#10 instr = 16'h7102;
+	#10 instr = 16'hA001;
+	#10 instr = 16'hA402;
+	#10 instr = 16'hAC7F;
+	#10 instr = 16'h2F03;
+	#10 instr = 16'h2001;
+	#10 instr = 16'hC803;
+	#10 instr = 16'hDA01;
+	#10 instr = 16'hE9F8;
+	#10 instr = 16'h00FF;
 end
 endtask

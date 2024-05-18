@@ -51,9 +51,9 @@ int get_opcode(char *op)
         return '6';
     else if (!strcmp(op, "XOR"))
         return '7';
-    else if (!strcmp(op, "LW"))
+    else if (!strcmp(op, "LD"))
         return '8';
-    else if (!strcmp(op, "SW"))
+    else if (!strcmp(op, "ST"))
         return '9';
     else if (!strcmp(op, "SET"))
         return 'A';
@@ -205,7 +205,7 @@ int op_processing(FILE *fp, char *op, char *arg1, char *arg2, char *arg3, int mo
             return 2;
         }
     }
-    else if (!strcmp(op, "ADC") || !strcmp(op, "LW") || !strcmp(op, "SW") || !strcmp(op, "LTC") || !strcmp(op, "JMP") || !strcmp(op, "SET") || !strcmp(op, "CBZ"))
+    else if (!strcmp(op, "ADC") || !strcmp(op, "LD") || !strcmp(op, "ST") || !strcmp(op, "LTC") || !strcmp(op, "JMP") || !strcmp(op, "SET") || !strcmp(op, "CBZ"))
     {
         if (atoi(arg3) <= 127 && atoi(arg3) >= -128)
             get_hexa(fp, atoi(arg3));
