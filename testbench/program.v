@@ -1,4 +1,4 @@
-`define NUM_INSTRUCTIONS 11
+`define NUM_INSTRUCTIONS 500
 
 task program(); begin
 	#10 instr = 16'hA408;
