@@ -1,0 +1,5 @@
+read_verilog ../rtl/*.v
+
+synth -top MAS16bA
+
+write_verilog MAS16bA_ps.v

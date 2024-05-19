@@ -21,6 +21,12 @@ initial
 begin
 $dumpfile("dump.vcd");
 $dumpvars(0, MAS16bA_tb);
+
+// Shows the memory
+/*for (integer j = 0; j < 65536; j = j+1) begin
+		$dumpvars(0, uut.mem.memory[j]);
+	end*/
+
 clk = 0;
 rstz = 1;
 pg = 1;

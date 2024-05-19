@@ -18,10 +18,12 @@ parameter WIDTH = 16;
 
 reg [(WIDTH-1):0] r[0:(NREGISTERS-1)];
 
+integer i;
+
 // Define Registers R0 - R3
 always @(posedge clk)
 begin
-	for (integer i = 0; i < NREGISTERS; i = i +1) begin
+	for (i = 0; i < NREGISTERS; i = i +1) begin
 		if (!rstz) 
 			r[i] <= 0;
 		else if ((rd == i) & en)

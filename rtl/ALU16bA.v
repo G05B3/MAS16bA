@@ -15,7 +15,7 @@ wire [15:0] rmul;
 wire [15:0] rsra;
 wire [15:0] ratm;
 
-wire [15:0] rand;
+wire [15:0] rrand;
 wire [15:0] ror;
 wire [15:0] rnot;
 wire [15:0] rxor;
@@ -37,12 +37,12 @@ assign rsra = opA >> opB;
 assign ratm = selOp[1] ? (selOp[0] ? rsra : rmul) : radd;
 
 // Logic Operations
-assign rand = opA & opB;
+assign rrand = opA & opB;
 assign ror = opA | opB;
 assign rnot = ~opA;
 assign rxor = opA ^ opB;
 
-assign rlog = selOp[1] ? (selOp[0] ? rxor : rnot) : (selOp[0] ? ror : rand);
+assign rlog = selOp[1] ? (selOp[0] ? rxor : rnot) : (selOp[0] ? ror : rrand);
 
 // LD/ST Operations
 assign radr = opA + opB;

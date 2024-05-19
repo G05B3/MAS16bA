@@ -1,0 +1,46 @@
+# Array definition
+SET R0,100 # Base address of array
+SET R1,40 # arr[0]
+ST R1,R0,0
+SET R1,50 # arr[1]
+ST R1,R0,2
+SET R1,30 # arr[2]
+ST R1,R0,4
+SET R1,50 # arr[3]
+ST R1,R0,6
+SET R1,30 # arr[4]
+ST R1,R0,8
+SET R1,40 # arr[5]
+ST R1,R0,10
+
+# Axpy in loop
+SET R2,4 # y[i] = 4x[i] + 3
+SET R3,30
+LD R1,R0,0 # load arr[i]
+MUL R1,R1,R2
+ADD R1,R1,R3
+ST R1,R0,12 # y[i] = axpy(x[i])
+ADC R0,R0,2 # i++
+LTC R3,R0,112 # 112 = 100 + 12 => 100 + N+2 (i < N ? 1:0)
+LTC R3,R3,1
+CBZ R3,R2,-20 # jump to SET R3,3 while i < N
+
+# Average
+SET R1,0 # sum = 0
+LD R2,R0,0
+ADD R1,R1,R2
+ADC R0,R0,2
+LTC R3,R0,124
+LTC R3,R3,1
+SET R2,0
+CBZ R3,R2,-12
+SET R2,1
+SRA R1,R1,R2 # sum/=2
+SET R2,2
+SRA R0,R1,R2 # (sum/2) /4
+SET R2,4
+SRA R3,R1,R2 # (sum/2) /4^2
+SET R2,6
+SRA R1,R1,R2 # (sum/2) /4^3
+ADD R1,R1,R3
+ADD R1,R1,R0 # approximation to (sum/2) /3 = sum/6 = avg

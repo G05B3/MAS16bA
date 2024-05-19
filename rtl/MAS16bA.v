@@ -25,6 +25,7 @@ wire selB;
 wire jsel;
 wire msel;
 wire mwen;
+wire wdataen;
 wire rfen;
 wire cbzsel;
 wire cbz_flag;
@@ -97,6 +98,7 @@ BC16bA bc(
 );
 
 assign rstzmem = !pg | rstz;
+assign wdataen = !pg & mwen;
 
 MEM12b4bA mem(
 	.addressA(pc), // port A is for instructions => address A = PC
@@ -104,7 +106,8 @@ MEM12b4bA mem(
 	.dataInA(pg_instr),
 	.dataInB(opd),
 	.writeEnableA(pg),
-	.writeEnableB(mwen),
+	.writeEnableB(wdataen),
+	.clk(clk),
 	.rstz(rstzmem),
 	.dataOutA(instr),
 	.dataOutB(mem_out),
