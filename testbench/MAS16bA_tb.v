@@ -46,6 +46,9 @@ program();
 #10 instr = 16'ha000;
 #10 instr = 16'hf0fe;*/
 
+#10 instr = 16'ha000;
+#10 instr = 16'hf000; // end program
+
 #10 pg = 0; rstz = 0;
 #10 rstz = 1;
 for (integer i = 0; i < `NUM_INSTRUCTIONS; i = i + 1) begin

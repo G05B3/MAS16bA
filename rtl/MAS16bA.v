@@ -32,8 +32,6 @@ wire cbz_flag;
 wire cbz;
 wire nextpc_flag;
 
-wire rstzmem; // resets memory; cannot be just the reset signal, otherwise it deprograms the mem
-
 wire [15:0] nextpc;
 reg [15:0] pc;
 
@@ -97,7 +95,6 @@ BC16bA bc(
 	.dgnd(dgnd)
 );
 
-assign rstzmem = !pg | rstz;
 assign wdataen = !pg & mwen;
 
 MEM12b4bA mem(
@@ -108,7 +105,6 @@ MEM12b4bA mem(
 	.writeEnableA(pg),
 	.writeEnableB(wdataen),
 	.clk(clk),
-	.rstz(rstzmem),
 	.dataOutA(instr),
 	.dataOutB(mem_out),
 	.dvdd(dvdd),
