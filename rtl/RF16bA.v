@@ -29,7 +29,7 @@ begin
 		else if ((rd == i) & en)
 			r[i] <= data;
 		else
-			r[i] = r[i];
+			r[i] <= r[i];
 	end
 end
 

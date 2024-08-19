@@ -1,12 +1,8 @@
-module MAS16bA (
+module MAS16bA_old (
 	input [15:0] pg_instr, // program instruction => stored in memory in programming mode
-	input [31:0] min,
 	input pg, // programming mode (for writing the program to memory)
-    input clk,
+        input clk,
 	input rstz,
-	output [31:0] addrm,
-	output [31:0] dmem,
-	output [1:0] mwe,
 	inout dvdd,
 	inout dgnd
 );
@@ -38,13 +34,6 @@ wire nextpc_flag;
 
 wire [15:0] nextpc;
 reg [15:0] pc;
-
-wire [15:0] mini;
-wire [15:0] mind;
-wire [15:0] addri;
-wire [15:0] addrd;
-wire [15:0] dmemi;
-wire [15:0] dmemd;
 
 assign opc = {{8{c[7]}}, c};
 
@@ -108,38 +97,19 @@ BC16bA bc(
 
 assign wdataen = !pg & mwen;
 
-CACHE16b6A icache(
-	.addr(pc >> 1),
-	.data_in(pg_instr),
-	.mem_in(mini),
+MEM12b4bA mem(
+	.addressA(pc), // port A is for instructions => address A = PC
+	.addressB(alu_res), // on memory operations, the ALU result is the memory address
+	.dataInA(pg_instr),
+	.dataInB(opd),
+	.writeEnableA(pg),
+	.writeEnableB(wdataen),
 	.clk(clk),
-	.rstz(rstz | ~pg),
-	.we(pg),
-	.data_out(instr),
-	.data_mem(dmemi),
-	.addr_mem(addri),
+	.dataOutA(instr),
+	.dataOutB(mem_out),
 	.dvdd(dvdd),
 	.dgnd(dgnd)
 );
-
-CACHE16b6A dcache(
-	.addr(alu_res),
-	.data_in(opd),
-	.mem_in(mind),
-	.clk(clk),
-	.rstz(rstz | ~pg),
-	.we(wdataen),
-	.data_out(mem_out),
-	.data_mem(dmemd),
-	.addr_mem(addrd),
-	.dvdd(dvdd),
-	.dgnd(dgnd)
-);
-
-assign mwe = {pg, wdataen};
-assign dmem = {dmemi, dmemd};
-assign addrm = {addri, addrd};
-assign min = {mini, mind};
 
 // Write-Back
 assign wbdata = msel ? mem_out : alu_res;
