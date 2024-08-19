@@ -70,9 +70,11 @@ program();
 #10 pg = 0; rstz = 0;
 #10 rstz = 1;
 
-for (integer i = 0; i < `NUM_INSTRUCTIONS; i = i + 1) begin
-	#10 $display("instr: %h; R0 = %1d, R1 = %1d, R2 = %1d, R3 = %1d",uut.instr, uut.rf.r[0], uut.rf.r[1], uut.rf.r[2], uut.rf.r[3]);
-end
+#2000
+
+/*for (integer i = 0; i < `NUM_INSTRUCTIONS; i = i + 1) begin
+	#10 //$display("instr: %h; R0 = %1d, R1 = %1d, R2 = %1d, R3 = %1d",uut.instr, uut.rf.r[0], uut.rf.r[1], uut.rf.r[2], uut.rf.r[3]);
+end*/
 
 $finish;
 end
